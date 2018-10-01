@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+
+\begin{document}
+\title{Shifting Harmonic Trap with Gradient}
+\section{Shifting Harmonic Trap with Gradient}
+\subsection{Derivation}
+
+Calculating the gradient needed to shift a harmonic potential by a number of sites $n$.
+
+Harmonic Trap in Hz ($\ref{eq:ht}$)
+
+\begin{equation}
+E_{harm} / \hbar=\frac{1}{2 \hbar} m \omega_t^2 x^2 = \frac{1}{2 \hbar} m \omega_t^2 a^2 y^2 
+\label{eq:ht}
+\end{equation}
+
+Where $y$ is coordinate in lattice sites, $a$ is the lattice spacing, and $\omega_t$ is the trap frequency. A convenient way to calculate the shift is to combine the physical constants in the equation with the recoil energy in Hz($\ref{eq:er}$).
+
+\begin{equation}
+E_{rec} / \hbar = \omega_{rec} = \frac{\hbar k^2}{2 m} = \frac{\hbar \left ( \frac{\pi^2}{a^2}\right )}{2 m}=\frac{\hbar \pi^2}{2 m a^2}
+\label{eq:er}
+\end{equation}
+
+Substituting ($\ref{eq:er}$) into ($\ref{eq:ht}$) leaves the harmonic potential in terms of only $\omega_t$ and $\omega_{rec}$  ($\ref{eq:cmb}$).
+
+\begin{equation}
+E_{harm} / \hbar = \frac{1}{2 \hbar} \omega_t^2 y^2 \left (\frac{2 m a^2}{\pi^2 \hbar} \right ) \left ( \frac{\hbar \pi^2}{2} \right ) = \frac{1}{4 }\frac{\omega_t^2 \pi^2}{\omega_{rec}}y^2
+\label{eq:cmb}
+\end{equation}
+
+Now consider some potential that combines both a harmonic term and a linear term to shift the position of the harmonic when completing the square ($\ref{eq:AllH}$).
+
+\begin{equation}
+V / \hbar = Ay^2 - By = A\left ( y - \frac{B}{2A} \right )^2 + constant
+\label{eq:AllH}
+\end{equation}
+
+Where $B$ is defined as the gradient in kHz/site. So now if we consider a desired offset of $n$ sites we can calculate what the gradient must be to provide this shift ($\ref{eq:soln}$). We can ignore the constant term in this case as it just provides some overall offset to the potential and doesn't effect the dynamics of this simple system.
+
+\begin{equation}
+n=\frac{B}{2A} \rightarrow B=n 2 A = n 2 \left ( \frac{1}{4} \frac{\omega_t^2 \pi^2}{\omega_{rec}} \right ) = \frac{n}{2} \frac{\omega_t^2 \pi^2}{\omega_{rec}}
+\label{eq:soln}
+\end{equation}
+
+\subsection{Quick Explicit Example}
+
+Let's consider shifting a 5 kHz trap by 150nm ($\approx a/4$). For the Rb microscope, $\omega_{rec} = 2 \pi \cdot 1.24$ kHz.
+
+\begin{equation}
+B = \frac{(1/4)}{2} \frac{(2 \pi \cdot 5)^2 \pi^2 }{2 \pi \cdot 1.24}=156.282\mathrm{ kHz/site}
+\end{equation}
+
+\subsection{Kicking with Lattice}
+
+If we consider turning on a lattice that is not centered on a tight harmonic trap then this can also be used to give a kick or apply a gradient to the harmonic trap. For example if we consider doing this by $\approx a/4$ then this would be at the linear region of the lattice potential and the effect can be reasonably approximated by a linear gradient.
+
+
+
+\begin{equation}
+\omega_{lat} = \frac{\hbar k^2}{m}\sqrt{\frac{V_{lat}}{E_{rec}}}
+\label{eq:wl}
+\end{equation}
+
+\end{document}

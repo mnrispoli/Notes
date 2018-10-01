@@ -1,0 +1,654 @@
+%% LyX 2.0.7 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[letterpaper,english]{scrartcl}
+\usepackage{fourier}
+\usepackage{verbatim}
+\usepackage{helvet}
+\usepackage[OT2,T1]{fontenc}
+\usepackage{color}
+\definecolor{shadecolor}{rgb}{0.75, 0.75, 0.75}
+
+\DeclareSymbolFont{cyrletters}{OT2}{wncyr}{m}{n}
+\DeclareMathSymbol{\Sha}{\mathalpha}{cyrletters}{"58}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\pagestyle{empty}
+\setlength{\parskip}{\smallskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{babel}
+\usepackage{placeins}
+\usepackage{multicol}
+\usepackage{units}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{esint}
+
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\pagestyle{empty}
+\setlength{\parskip}{\smallskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{color}
+\definecolor{shadecolor}{rgb}{0.75, 0.75, 0.75}
+\usepackage{babel}
+\usepackage{units}
+\usepackage{framed}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{esint}
+
+\onehalfspacing
+\usepackage[unicode=true,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{pdftitle={Physics 175 - Problem Set 1},
+ pdfauthor={Anton Mazurenko}}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\pdfpageheight\paperheight
+\pdfpagewidth\paperwidth
+
+\newcommand{\noun}[1]{\textsc{#1}}
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{scrpage2}
+\usepackage{xcolor}
+
+
+%%LaTeX for Physicists
+\let\vaccent=\v % rename builtin command \v{} to \vaccent{}x
+\renewcommand{\v}[1]{\ensuremath{\mathbf{#1}}} % for vectors
+\newcommand{\gv}[1]{\ensuremath{\mbox{\boldmath$ #1 $}}} 
+% for vectors of Greek letters
+\newcommand{\uv}[1]{\ensuremath{\mathbf{\hat{#1}}}} % for unit vector
+\newcommand{\abs}[1]{\left| #1 \right|} % for absolute value
+\newcommand{\avg}[1]{\left< #1 \right>} % for average
+\let\underdot=\d % rename builtin command \d{} to \underdot{}
+\renewcommand{\d}[2]{\frac{d #1}{d #2}} % for derivatives
+\newcommand{\dd}[2]{\frac{d^2 #1}{d #2^2}} % for double derivatives
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}} 
+% for partial derivatives
+\newcommand{\pdd}[2]{\frac{\partial^2 #1}{\partial #2^2}} 
+% for double partial derivatives
+\newcommand{\pdc}[3]{\left( \frac{\partial #1}{\partial #2}
+ \right)_{#3}} % for thermodynamic partial derivatives
+\newcommand{\ket}[1]{\left| #1 \right>} % for Dirac bras
+\newcommand{\bra}[1]{\left< #1 \right|} % for Dirac kets
+
+\newcommand{\braket}[2]{\left< #1 \vphantom{#2} \right|
+ \left. #2 \vphantom{#1} \right>} % for Dirac brackets
+
+\newcommand{\matrixel}[3]{\left< #1 \vphantom{#2#3} \right|
+ #2 \left| #3 \vphantom{#1#2} \right>} % for Dirac matrix elements
+\newcommand{\grad}[1]{\gv{\nabla} #1} % for gradient
+\let\divsymb=\div % rename builtin command \div to \divsymb
+\renewcommand{\div}[1]{\gv{\nabla} \allcdot #1} % for divergence
+
+\newcommand{\Ham}{\mathcal{H}} %for Hamiltoninan
+\newcommand{\emf}{\mathcal{E}} %E field
+\newcommand{\dpl}[1]{\mathcal{P}_{#1}}
+\newcommand{\conj}[1]{\overline{#1}}
+
+\newcommand{\curl}[1]{\gv{\nabla} \times #1} % for curl
+\let\baraccent=\= % rename builtin command \= to \baraccent
+\renewcommand{\=}[1]{\stackrel{#1}{=}} % for putting numbers above =
+
+
+
+
+\ihead{\LARGE\bfseries Physics 175}
+\ohead{\LARGE Practice Mid-Term Exam}
+\setheadsepline{.8pt}
+\setkomafont{pagehead}{\sffamily}
+\setkomafont{headsepline}{\color{black!50}}
+\pagestyle{scrheadings}
+
+\usepackage{titlesec}
+\titleformat{\subsection}[hang]
+       {\normalfont\bfseries}
+       {(\alph{subsection})}
+       {0.5em}
+       {}
+       []
+\titleformat{\paragraph}[hang]
+       {\normalfont\bfseries}
+       {}
+       {0.5em}
+       {}
+       []
+
+\makeatother
+
+\begin{document}
+
+\title{Practice Mid-Term Examination Questions}
+
+\subtitle{Physics 175}
+
+\date{March 21/23, 2017}
+
+\maketitle
+
+\section*{Name: \rule{0.5\columnwidth}{1pt}}
+
+\section*{Instructions}
+
+You will have 90 minutes to work on the exam. The exam is a total of 100 points. Turning in your formula sheet is worth X points.  Budget your time wisely, using the point values
+as a guide. Use empty pages for computation.
+
+An equation sheet containing all required equations (and then some!) can be found in the back.
+
+You are not allowed to use any material (books, lecture notes) other
+than \emph{double-sided sheet with your handwritten notes}, which
+you're required to hand in together with your exam. The use of a calculator
+is permitted, but no other electronic device (cell phone, laptops,
+etc.) are allowed during the exam.
+
+Extra paper is available should you require it. Please write your
+name on \emph{every} sheet that you attach to your exam.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{cc}
+\textbf{Problem} & \textbf{Score}\\[0.5ex]
+1 & \rule{20pt}{1pt}\\ [0.5ex]
+2 & \rule{20pt}{1pt}\\[0.5ex]
+3 & \rule{20pt}{1pt}\\[0.5ex]
+4 & \rule{20pt}{1pt}\\[0.5ex]
+5 & \rule{20pt}{1pt}\\[0.5ex]
+\textbf{TOTAL} & \rule{20pt}{1pt}\\
+
+\end{tabular}
+\end{table}
+
+\noindent \begin{center}
+\noun{Good Luck}!
+\par\end{center}
+
+\clearpage{}
+
+
+
+\section{Lenses}
+
+
+\subsection{Lens Equations}
+
+
+What is the lens equation?
+
+
+
+\subsection{Imaging: Conceptual}
+
+What is the focal length of a lens?
+
+\emph{Answer this in words or using the lens equation}
+
+
+
+
+
+\subsection{Imaging}
+
+Where is an object imaged to if it is placed $z_o=2f$ in front of the lens at $z=0$?
+
+
+\section{Fourier Transforms}
+
+\subsection{Important Examples}
+
+What is the fourier transform of f(x)?
+\[
+f(x)=\delta (x-x_o)+\delta (x+x_o)
+\]
+
+
+
+
+
+What is the fourier transform of f(x)?
+\[
+f(x)=\sin{k_x x_o}
+\]
+
+
+\subsection{4F Systems}
+
+
+What mathematical function do lenses perform?
+
+
+\subsection{4F imaging}
+
+Consider a 4F imaging system where a gaussian beam, with flat phase front at $z=-f_1$ is imaged by a lens with focal length $f_1$ to a plane $z=f_1$ where it impinges on an ideal grating  with spacing $d$.
+
+The electric field at $z=-f_1$ is given below:
+\[
+E(z=-f_1)=G_{0,\sigma}(x)
+\]
+
+The mask function $M(x')$, ideal grating in this case, is given functionally below:
+\[
+M(x)=\Sha_d(x)=\sum_{n=-\infty}^{\infty}\delta(x-nd)
+\]
+
+\emph{Refer to equation sheet at end of test if confused about these functions}
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.95]{ph175_4f_mod}
+\caption{4F imaging system. Problem \textbf{2a}}
+\end{center}
+\end{figure}
+
+
+\begin{enumerate}
+\item Write on the figure where the ``Fourier Plane" is for this imaging system.
+\item Determine what the electric field is  (as a function of $k_x$) just before hitting the ideal grating/mask at $z=f_1 - \epsilon$, ($\epsilon\ll f_1$).
+\item Rewrite the electric field as a function of transverse coordinate $x'$ at $z=f_1 - \epsilon$, ($\epsilon\ll f_1$).
+\item Determine the electric field just after illuminating the ideal grating,$M(x')$, as a function of transverse coordinate $x'$ at $z=f_1 + \epsilon$, ($\epsilon\ll f_1$).
+\item Determine the electric field now at the CCD chip ($z=f_1+2f_2$). (For simplicity of the solution, assume that $2\pi/d\gg \sigma$.
+\end{enumerate}
+
+\emph{Hint:} Remember that when changing from $k$-space to real dimensions we use the substitution $k_x\rightarrow \frac{2 \pi}{\lambda f} x'$. 
+
+\emph{Hint:} The scaling theorem and convolution theorem may be \emph{very} useful in this problem.
+
+
+\newpage
+\clearpage{}
+\newpage
+
+\section{Filters by eye}
+
+
+\subsection{Filters}
+
+
+For the following image, guess which resultant image is a function of the input image (top left) and the fourier filter (top right)
+
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.4]{fft_figs/pp1.pdf}
+\caption{4F imaging system with filtering. Top Left is the original image. The Filter in the fourier plane is the top right image.}
+\end{center}
+\end{figure}
+
+\newpage
+
+
+For the following image, guess which resultant image is a function of the input image (top left) and the fourier filter (top right)
+
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.5]{fft_figs/pp2.pdf}
+\caption{4F imaging system with filtering. Top Left is the original image. The Filter in the fourier plane is the top right image.}
+\end{center}
+\end{figure}
+
+\newpage
+
+For the following image, guess which resultant image is a function of the input image (top left) and the fourier filter (top right)
+
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.5]{fft_figs/pp3.pdf}
+\caption{4F imaging system with filtering. Top Left is the original image. The Filter in the fourier plane is the top right image.}
+\end{center}
+\end{figure}
+
+\newpage
+For the following image, guess which resultant image is a function of the input image (top left) and the fourier filter (top right)
+
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.5]{fft_figs/pp4.pdf}
+\caption{4F imaging system with filtering. Top Left is the original image. The Filter in the fourier plane is the top right image.}
+\end{center}
+\end{figure}
+
+\newpage
+
+
+\clearpage{}
+\newpage
+
+
+\section{Gaussian Modes}
+
+\subsection{Qualitative Question 1}
+
+What equation does the ``Gaussian Beam" satisfy?
+
+
+Paraxial Helmholtz Equation
+
+
+\subsection{Qualitative Question 2}
+What is the ``rayleigh range" defined as?
+
+
+
+\subsection{Less Qualitative Question 3}
+
+If I want a waist of $w_o$, and I place a lens of $f$ at a location where the radius of curvature is infinite, and the beam has a waist of $w'$:
+\begin{enumerate}
+\item Where will the minimum waist be located?
+\item What $f$ should the lens be?
+\end{enumerate}
+
+
+
+\section{Cavities}
+
+
+Given a cavity with two mirrors of equal magnitude of curvature (the sign you can adjust based on placement) separated by $6 z_o$, what must the radius of curvatures be?
+\begin{enumerate}
+\item Consider the case where the mirrors are placed symmetrically on either side of the minimum waist.
+\item Consider the case where the mirrors are placed both on one side of the minimum waist.
+\end{enumerate}
+
+
+
+\section{Polarization}
+
+
+
+\subsection{General Question 1}
+
+Using the Jones Vector notation, how do we find if another polarization is orthogonal?
+
+\subsection{General Question}
+
+
+What does a $\lambda/2$ wave plate do? What are the ``fast" and ``slow" axes in the form of its matrix representation?
+
+
+
+
+\clearpage{}
+\newpage
+
+\begin{comment}
+
+\subsection{Fourier Transform by eye (7p)}
+Write the number from the FT in column A next to the object in column B.
+
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{cc|cc}
+& Fourier Transform (A) & Object (B) & \textbf{ANSWER}\\
+\textbf{1}&\includegraphics[scale=0.11]{gauss1_spatial.jpg}&\includegraphics[scale=.6]{square_fourier.jpg} &\rule{40pt}{1pt}\\
+\textbf{2}&\includegraphics[scale=0.11]{circle_spatial.jpg}&\includegraphics[scale=.6]{gauss2_fourier.jpg} &\rule{40pt}{1pt}\\
+\textbf{3}&\includegraphics[scale=0.11]{tri_spatial.jpg}&\includegraphics[scale=.6]{diag_fourier.jpg} & \rule{40pt}{1pt}\\
+\textbf{4}&\includegraphics[scale=0.11]{gauss2_spatial.jpg}&\includegraphics[scale=.6]{saw_fourier.jpg} &\rule{40pt}{1pt}\\
+\textbf{5}&\includegraphics[scale=0.11]{diag_spatial.jpg}&\includegraphics[scale=.6]{circle_fourier.jpg} &\rule{40pt}{1pt}\\
+\textbf{6}&\includegraphics[scale=0.11]{saw_spatial.jpg}&\includegraphics[scale=.6]{tri_fourier.jpg} &\rule{40pt}{1pt}\\
+\textbf{7}&\includegraphics[scale=0.11]{square_spatial.jpg}&\includegraphics[scale=.6]{gauss1_fourier.jpg} &\rule{40pt}{1pt}\\
+\end{tabular}
+\end{table}
+
+
+\begin{center}
+\begin{tabular}{cc|cc}
+& Fourier Transform (A) & Object (B) & \textbf{ANSWER}\\
+\textbf{1}&\includegraphics[scale=0.13]{gauss1_spatial.jpg}&\includegraphics[scale=0.85]{square_fourier.jpg} &\rule{40pt}{1pt}\\
+\textbf{2}&\includegraphics[scale=0.13]{circle_spatial.jpg}&\includegraphics[scale=0.85]{gauss2_fourier.jpg} &\rule{40pt}{1pt}\\
+\textbf{3}&\includegraphics[scale=0.13]{tri_spatial.jpg}&\includegraphics[scale=0.85]{diag_fourier.jpg} & \rule{40pt}{1pt}\\
+\textbf{4}&\includegraphics[scale=0.13]{gauss2_spatial.jpg}&\includegraphics[scale=0.85]{saw_fourier.jpg} &\rule{40pt}{1pt}\\
+\textbf{5}&\includegraphics[scale=0.13]{diag_spatial.jpg}&\includegraphics[scale=0.85]{circle_fourier.jpg} &\rule{40pt}{1pt}\\
+\textbf{6}&\includegraphics[scale=0.13]{saw_spatial.jpg}&\includegraphics[scale=0.85]{tri_fourier.jpg} &\rule{40pt}{1pt}\\
+\textbf{7}&\includegraphics[scale=0.13]{square_spatial.jpg}&\includegraphics[scale=0.85]{gauss1_fourier.jpg} &\rule{40pt}{1pt}\\
+\end{tabular}
+\end{center}
+\FloatBarrier
+
+
+\newpage
+\subsection{Fourier Filtering (8p)}
+Now we will consider the full $4f$ imaging system, with a spatial filter $t(\v{r'})$ in the Fourier plane. The left columns contain the original object and the produced image. The right columns contain possible Fourier masks (white is transmissive, black is opaque) required to transform the object into the image. Match them.
+\begin{table}[ht]
+\centering
+\begin{tabular}{ccc|cc}
+&Original & Filtered & Filter (B) & \textbf{ANSWER} \\
+\textbf{1}&\includegraphics[scale=0.09]{tom.png}&\includegraphics[scale=0.09]{TomFiltered.png} &\includegraphics[scale=0.5]{hipass.png}  & \rule{40pt}{1pt}\\
+\textbf{2}&\includegraphics[scale=0.2]{cea.png}&\includegraphics[scale=0.2]{ceafiltered.png} &\includegraphics[scale=0.2]{lop.png}  & \rule{40pt}{1pt}\\
+\textbf{3}&\includegraphics[scale=0.16]{curiosityBW.png}&\includegraphics[scale=0.16]{curiosityfiltered.png} &\includegraphics[scale=1]{futuramafilter.png} & \rule{40pt}{1pt} \\
+\textbf{4}&\includegraphics[scale=0.11]{futurama1.png}&\includegraphics[scale=0.11]{futurama2.png} &\includegraphics[scale=0.2]{1dlopass.png} & \rule{40pt}{1pt} \\
+\end{tabular}
+\label{tab:gt}
+\end{table}
+
+\FloatBarrier
+
+\end{comment}
+
+\newpage
+\section{True/False (15p)}
+
+Circle \textbf{T} or \textbf{F}, as appropriate to the statement.
+
+\begin{enumerate}
+\item A diverging lens makes an object appear farther than it actually is. \textbf{T / F}
+%\item A diverging lens corrects for near-sightedness. \textbf{T / F}
+%\item A converging lens can make ``real" images. \textbf{T /F}
+%\item Light refracting from high index to low index is bent away from the normal.  \textbf{T / F}
+\item The focal length of a glass focusing lens underwater is typically shorter than in air. \textbf{T / F}
+%\item The side of a wine bottle is a converging lens in one dimension. \textbf{T / F}
+%\item A wide Gaussian in $\v{x}$ is a narrow Gaussian in $\v{k}$. \textbf{T / F}
+%\item You never see polarized light in nature.  \textbf{T / F}
+%\item Ray optics is exact in the $\lim_{\abs{\lambda}\rightarrow 0}$.  \textbf{T / F}
+%\item A Gaussian beam focused by a lens will focus to its minimal spot size farther from the lens than ray optics predicts. \textbf{T / F}
+\item If a laser is collimated on earth and directed into space, the beam will eventually begin to diverge (neglect atmospheric effects). \textbf{T / F}
+\item When a plano-convex lens is used to focus parallel rays, the curved side should face the parallel rays, to suppress aberrations. \textbf{T / F}
+%\item An air-glass interface under normal incidence reflects $<0.1$\% of incident light (intensity). \textbf{T / F}
+%\item Radio wave frequencies are about 10 times smaller than visible frequencies. \textbf{T / F}
+%\item Two lossless mirrors can be arranged in a way such that 100\% of light of one frequency is being transmitted. \textbf{T / F}  
+\item Two lossless mirrors can be arranged in a way such that 100\% of light of two distinct frequencies is being transmitted. \textbf{T / F}
+\item Two lossless mirrors can be arranged in a way such that 100\% of white light is being transmitted. \textbf{T / F}
+\item Two lossless mirrors can be arranged in a way such that 100\% of light of a particular frequency is reflected. \textbf{T/F}
+%\item At Brewster's angle, light polarized parallel to a dielectric interface is not reflected. \textbf{T /F}
+%\item Optical resonances in dielectric materials are usually in the visible part of the spectrum. \textbf{T/F}
+%\item In general, dielectric materials have a higher index of refraction for higher frequencies. \textbf{T/F}
+%\item A ``Quarter wave plate" (retarding one polarization component by a quarter of a wave) can turn circular polarized light into linearly polarized light. \textbf{T /F}
+%\item A beam with a larger minimal waist diverges more slowly than one with a smaller minimal waist \textbf{T /F}
+%\item Energy in a standing wave oscillates between the electric and magnetic field. \textbf{T/F}
+%\item A Gaussian beam is solely defined by its minimum waist. \textbf{T/F}
+%\item Right Hand Circular Polarized light has a relative phase shift of $\lambda/2$ (also a phase shift of $\pi$) between the $x$ and $y$ components. \textbf{T/F}
+%\item Optics is wicked awesome! \textbf{T / F}
+\item The Free Spectral Range (FSR) is purely determined by the cavity length.
+\item The Finesse of the cavity is determined by both the cavity length and the reflectivity.
+\item Metals make good lossless ideal mirrors.
+\end{enumerate}
+
+\noindent \begin{center}
+\noun{YOU ARE DONE}!
+\par\end{center}
+
+
+\newpage
+
+\section*{Equations}
+
+%\setlength{\columnseprule}{0.25pt}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+\begin{multicols}{2}
+\subsection*{Special Functions}
+\begin{tabular}{@{}ll@{}}
+%$\Theta_H(x)$ & $=  \left\{
+ % \begin{array}{lr}
+  %  1 & : x > 0\\
+  %  0 & : x < 0
+ % \end{array}
+%\right.$ \\
+
+$\Pi_H(x)$ & $=  \left\{
+  \begin{array}{lr}
+    1 & : |x| < 1/2\\
+    0 & : |x| \geq 1/2
+  \end{array}
+\right.$ \\
+$\Sha_L(x)$ & $=\sum_{n=-\infty}^{\infty}\delta(x-nL)$ \\
+
+$
+G_{\mu,\sigma}(x)$ & $=\exp \left[-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2\right]$\\
+\end{tabular}
+
+\subsection*{$\delta$ Function Identities}
+\begin{tabular}{@{}ll@{}}
+$\int_{-\infty}^{\infty}dx f(x)\delta(x-\alpha)=f(\alpha)$ & Definition\\
+$\int_{-\infty}^{\infty}dx e^{\pm ikx} = 2\pi\delta(k)$ & Decomposition\\
+\end{tabular}
+
+
+\subsection*{Fourier Transforms}
+\begin{tabular}{@{}ll@{}}
+$f(x)$ & $\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}dx f(x)e^{-ikx}$\\
+$\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}dk g(k)e^{ikx}$& $g(k)$\\
+$f(x)g(x)$ & $f(k)*g(k)$\\
+$f(x)*g(x)$ & $f(k)g(k)$\\
+$f(x-\alpha)$ & $f(k-2\pi \alpha)$\\
+$f(x\alpha)$ & $\frac{f(k/\alpha)}{\alpha}$\\
+$\delta(x-\alpha)$ & $\frac{1}{\sqrt{2\pi}}\exp -ik\alpha$\\
+$\exp(i\alpha x))$ & $\sqrt{2\pi}\delta(k-\alpha)$\\
+$\Pi_H(x/L)$  &$\frac{L}{\sqrt{2\pi}}\frac{\sin(kL/2)}{kL/2}$\\
+$\Sha_L(x)$ &  $\frac{\sqrt{2\pi}}{L}\Sha_{2\pi/L}(k)$\\% $\frac{\sqrt{2\pi}}{T}\sum_{n=-\infty}^{\infty}\delta\left(k-\frac{2\pi n}{L}\right) $\\
+$G_{\mu,\sigma}(x)$ & $\sigma e^{-ik\mu}G_{0,1/\sigma}(k)$
+\end{tabular}
+
+\subsection*{Maxwell's Equations}
+\begin{tabular}{@{}ll@{}}
+$\nabla\cdot\v{E}=\frac{\rho}{\varepsilon_{0}}$ & Electric Gauss' Law\\
+$\nabla\cdot\v{B}=0$& Magnetic Gauss' Law\\
+$\nabla\times\v{E}=-\frac{\partial}{\partial t}\v{B}$ & Faraday's Law\\
+$\nabla\times\v{B}=\mu_{0}\v{J}+\mu_{0}\varepsilon_{0}\frac{\partial}{\partial t}\v{E}$ & Ampere's Law\\
+\end{tabular}
+
+\subsection*{EM Boundary Conditions}
+\begin{tabular}{@{}ll@{}}
+$\v{D}=\epsilon\v{E}+\v{P}$ & Electric Displacement\\
+$\v{B}=\mu\v{H}$ & Magnetic Field\\
+$\v{D}_{n1}=\v{D}_{n2}$ & Normal Electric\\
+$\v{E}_{t1}=\v{E}_{t2}$& Transverse Electric\\
+$\v{B}_{n1}=\v{B}_{n2}$ & Normal Magnetic\\
+$\v{H}_{t1}=\v{H}_{t2}$ & Transverse Magnetic\\
+\end{tabular}
+
+
+\subsection*{Wave Optics}
+\begin{tabular}{@{}ll@{}}
+$c=\frac{1}{\sqrt{\mu_0\epsilon_0}}$ & Speed of Light\\
+$\grad{}^2\v{E}-\frac{1}{c^2}\pdd{\v{E}}{t}=0$ & Wave Equation\\
+$\v{E}(\v{x},t)=E_0\v{J}_0\exp i (\omega t-\v{k}\cdot\v{x}+\phi)$ & Plane Wave\\
+$\v{S}=\frac{1}{\mu_0}\v{E}\times\v{B}$ & Poynting Vector\\
+$\avg{S}=\frac{1}{2\mu_0c}\abs{\v{E}_0}^2$ & Plane Wave Intensity ($t$ avg)\\
+$\grad{}^2A+\abs{\v{k}}^2\pd{A}{z}=0$ & Helmholtz\\
+$\grad{}^2_T A-2i\abs{\v{k}}\pd{A}{z}=0$ & Parax. Helmholtz\\
+\end{tabular}
+
+
+\subsection*{Ray Optics}
+\begin{tabular}{@{}ll@{}}
+$P=\frac{1}{f}=\left(n-1\right)\left[\frac{1}{R_{1}}-\frac{1}{R_{2}}\right]$ & Lensmaker's Equation\\
+$\frac{1}{f}=\frac{1}{s_i}+\frac{1}{s_o}$& Imaging Equation\\
+$n_1\sin\theta_1=n_2\sin\theta_2$ & Snell's Law\\
+$\tan\theta_B=\frac{n_2}{n_1}$ & Brewster Angle\\
+$r=\frac{n_{1}-n_{2}}{n_{1}+n_{2}} $ & Normal Fresnel \\
+\end{tabular}
+
+\subsection*{Gaussian Beams}
+\begin{tabular}{@{}ll@{}}
+$z_{0}=\frac{\pi w_{0}^{2}}{\lambda}$ & Rayleigh Range\\
+$w(z)=w_0\sqrt{1+\left(\frac{z}{z_0}\right)^2}$ & Waist\\
+$R(z)=z\left[1+\left(\frac{z_0}{z}\right)^2\right] $ & Curvature\\
+$\frac{1}{f}=\frac{1}{R}+\frac{1}{R'}$ & Lens\\
+\end{tabular}
+\subsection*{Cavities}
+
+\begin{tabular}{@{}ll@{}}
+$\mbox{FSR}=\frac{c}{2d}$ & Free Spectral Range \\
+$\mathcal{F}=\pi\frac{\sqrt{\abs{r_1}\abs{r_2}}}{1-\abs{r_1}\abs{r_2}} $ & Finesse\\
+$\nu_{\mbox{FWHM}}=\frac{\mbox{FSR}}{\mathcal{F}}$ & Full Width Half Max\\
+\end{tabular}
+
+%\frac{I_{out}}{I_0}=\frac{\abs{t_1}^2\abs{t_2}^2}{4\abs{r_1}^2\abs{r_2}^2}\frac{\left(2\mathcal{F}/\pi\right)^2}{1+\left(2\mathcal{F}/\pi\right)^2\sin^2\left[\frac{\pi\nu}{\mbox{FSR}+\frac{\phi_1+\phi_2}{2}}\right]}$ & Transmission\\
+
+\subsection*{Polarization, Jones Calculus}
+\begin{tabular}{@{}ll@{}}
+$\v{J}=\frac{1}{A^2+B^2}\left( \begin{array}{c}
+A\\
+B\exp i\phi \\ \end{array} \right)$ & Jones Vector\\ 
+$\v{J}_1\cdot\conj{\v{J}_2}$ & $\mathbb{C}$ dot product\\
+
+$\v{J}=\left( \begin{array}{c}
+1\\
+0\\ \end{array} \right)$ & Horiz. Polarization\\
+$\v{J}=\left( \begin{array}{c}
+0\\
+1\\ \end{array} \right)$ & Vert. Polarization\\
+
+$\v{J}=\frac{1}{\sqrt{2}}\left( \begin{array}{c}
+1\\
+-i\\ \end{array} \right)$ & Right Handed\\
+$\v{J}=\frac{1}{\sqrt{2}}\left( \begin{array}{c}
+1\\
+i\\ \end{array} \right)$ & Left Handed\\
+
+$\left( \begin{array}{cc}
+1 & 0 \\
+0 & 0 \\ \end{array} \right)$ & Polarizer $\uv{x}$\\
+$\left( \begin{array}{cc}
+1 & 0 \\
+0 & i \\ \end{array} \right)$ & $\lambda/4$ Plate (fast axis $\uv{x}$)\\
+$\left( \begin{array}{cc}
+1 & 0 \\
+0 & -1 \\ \end{array} \right)$ & $\lambda/2$ Plate (fast axis $\uv{x}$)\\
+$\left( \begin{array}{cc}
+\cos\theta & -\sin\theta \\
+\sin\theta & \cos\theta \\ \end{array} \right)$ & Rotation Matrix\\
+
+\end{tabular}
+
+
+\subsection*{Quantum Optics}f
+\begin{tabular}{@{}ll@{}}
+$i\hbar\frac{\mathrm{d}}{\mathrm{d}t}\psi(t)=\hat{\mathcal{H}}\psi(t)$ & Schrodinger \\
+\end{tabular}
+
+\subsection*{Trigonometry}
+
+\begin{tabular}{@{}ll@{}}
+$\sin^{2}\theta+\cos^{2}\theta=1$ & Pythagorean\\
+$\sin(\alpha\pm\beta)=\sin\alpha\cos\beta\pm\cos\beta\sin\alpha$ & Sine sum\\
+$\cos(\alpha\pm\beta)=\cos\alpha\cos\beta\mp\sin\alpha\sin\beta$ & Cosine sum\\
+$\sin^{2}\theta=\frac{1}{2}(1-\cos2\theta)$ & Double Angle Sine\\
+$\cos^{2}\theta=\frac{1}{2}(1+\cos2\theta)$& Double Angle Cosine\\
+\end{tabular}
+
+\end{multicols}
+
+
+
+
+
+
+
+
+\end{document}
